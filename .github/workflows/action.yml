@@ -1,5 +1,11 @@
+name: Super-Linter
+
+on: push
+
 jobs:
-  test:
-    steps:
-      - name: 23f1001415@ds.study.iitm.ac.in
-        run: echo "Hello, world!"
+  super-lint: 
+    runs-on: ubuntu-latest
+    test:
+      steps:
+        - name: 23f1001415@ds.study.iitm.ac.in
+          run: echo "Hello, world!"
