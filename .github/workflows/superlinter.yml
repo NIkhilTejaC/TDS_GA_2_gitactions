@@ -1,11 +1,21 @@
 name: Super-Linter
 
-on: push
+on: push 
 
 jobs:
   super-lint: 
+    name: Lint code base 
     runs-on: ubuntu-latest
-    test:
-      steps:
-        - name: 23f1001415@ds.study.iitm.ac.in
-          run: echo "Hello, world!"
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: 23f1001415@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
+
+      - name: Run super-linter 
+        uses: github/super-linter@v4
+        env:
+          DEAFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
